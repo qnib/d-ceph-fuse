@@ -1,8 +1,9 @@
 #!/bin/bash
 
 source /opt/qnib/consul/etc/bash_functions.sh
-wait_for_srv ceph-mds
+wait_for_srv ceph-mon
 
+sleep 2
 curl -s "localhost:8500/v1/kv/ceph/?keys" |grep ceph.client.admin.keyring >/dev/null
 EC=$?
 while [ ${EC} -ne 0 ];do
