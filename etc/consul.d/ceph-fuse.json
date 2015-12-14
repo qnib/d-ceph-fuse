@@ -1,0 +1,15 @@
+{
+  "services": [
+    {
+        "id": "ceph-fuse",
+        "name": "ceph-fuse",
+        "tags": [],
+        "checks": [
+            {
+               "script": "ps -ef|grep -v grep|grep  'ceph-fuse /'",
+               "interval": "5s"
+            }
+       ]
+    }
+  ]
+}
